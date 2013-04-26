@@ -23,6 +23,10 @@ teaching a single aspect of angular.
 ### Java
 - http://www.java.com
 
+### Karma
+- A test runner for javascript
+- http://karma-runner.github.io/0.8/index.html
+
 ## Workings of the application
 
 - The application filesystem layout structure is based on the [angular-seed] project.
@@ -136,7 +140,7 @@ based on angular-seed, the instructions apply to it as well.
 2. navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your
    browser.
 
-### Running unit tests
+### Running unit tests using java
 
 Requires java.
 
@@ -158,6 +162,13 @@ Requires ruby and [watchr](https://github.com/mynyml/watchr) gem.
 4. edit files in `app/` or `src/` and save them
 5. watch the log to see updates
 
+### Running unit tests using karma
+
+Requires karma.
+
+1. run the tests from console with [karma](https://github.com/karma-runner/karma) via
+   `scripts/test.sh` or `script/test.bat`.
+2. this will open a browser window per run, to run headless set the karma.conf file to use PhatomJS as the browser
 
 ### End to end testing
 
@@ -166,15 +177,13 @@ you to write your tests with jasmine-like BDD syntax.
 
 Requires a webserver, node.js + `./scripts/web-server.js` or your backend server that hosts the angular static files.
 
-Check out the
-[end-to-end runner's documentation](http://docs.angularjs.org/guide/dev_guide.e2e-testing) for more
-info.
+Check out the [end-to-end runner's documentation](http://docs.angularjs.org/guide/dev_guide.e2e-testing) for more info.
 
 * create your end-to-end tests in `test/e2e/scenarios.js`
 * serve your project directory with your http/backend server or node.js + `scripts/web-server.js`
 * to run do one of:
   * open `http://localhost:port/test/e2e/runner.html` in your browser
-  * run the tests from console with [Testacular](vojtajina.github.com/testacular) via
+  * run the tests from console with [Karma(https://github.com/karma-runner/karma) via
     `scripts/e2e-test.sh` or `script/e2e-test.bat`
 
 ## Application Directory Layout
@@ -201,8 +210,8 @@ info.
         partial1.html
         partial2.html
 
-    config/testacular.conf.js        --> config file for running unit tests with Testacular
-    config/testacular-e2e.conf.js    --> config file for running e2e tests with Testacular
+    config/karma.conf.js        --> config file for running unit tests with Karma
+    config/karma-e2e.conf.js    --> config file for running e2e tests with Karma
 
     scripts/            --> handy shell/js/ruby scripts
       e2e-test.sh       --> runs end-to-end tests with Testacular (*nix)
